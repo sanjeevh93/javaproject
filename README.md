@@ -1,7 +1,9 @@
 # Javaproject
 
+## RUN 
+`./mvnw spring-boot:run`
 
-## Build
+## Build target for publish
 
 `./mvnw package`
 
