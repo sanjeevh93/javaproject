@@ -19,6 +19,6 @@ jobs:
           scope: ${{ github.repository_owner }}
           registry-url: https://npm.pkg.github.com
 
-      - run: gh api /orgs/registry-test/packages/maven/javaproject/versions
+      - run: gh api /orgs/registry-test/packages/maven/com.mvnregistry.javaproject/versions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
