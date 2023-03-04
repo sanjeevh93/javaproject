@@ -12,7 +12,16 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Publish package
-        run: mvn --batch-mode deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Maven 3.8.6
+        run:
+          mkdir tmp
+          cd tmp
+          wget https://archive.apache.org/dist/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+          tar -xvf apache-maven-3.8.6-bin.tar.gz
+          mv apache-maven-3.8.6 /opt/
+          M2_HOME='/opt/apache-maven-3.8.6'
+          PATH="$M2_HOME/bin:$PATH"
+          export PATH
+      - name: Show Maven Verion
+        run: ./mvnw --version
+      
