@@ -14,7 +14,7 @@
 	<name>javaproject</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -43,7 +43,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub OWNER Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/registry-test/javaproject</url>
+			<url>https://maven.pkg.github.com/sanjeevh93/javaproject</url>
 		</repository>
 	</distributionManagement>
 	<build>
