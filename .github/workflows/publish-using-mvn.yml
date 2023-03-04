@@ -24,4 +24,8 @@ jobs:
           export PATH
       - name: Show Maven Verion
         run: ./mvnw --version
+      - name: Publish package
+        run: ./mvnw --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
