@@ -13,7 +13,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      - uses: actions/setup-node@v1
+        with:
+          scope: ${{ github.repository_owner }}
+          registry-url: https://npm.pkg.github.com
       - run: gh api /orgs/sanjeevh93/packages/maven/com.mvnregistry.javaproject/versions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
