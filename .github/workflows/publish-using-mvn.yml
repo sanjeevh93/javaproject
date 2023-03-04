@@ -19,9 +19,8 @@ jobs:
           wget https://archive.apache.org/dist/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz && \
           tar -xvf apache-maven-3.8.6-bin.tar.gz && \
           mv apache-maven-3.8.6 /opt/ && \
-          M2_HOME='/opt/apache-maven-3.8.6' && \
-          PATH="$M2_HOME/bin:$PATH" && \
-          export PATH
+          echo "export PATH=/opt/apache-maven-3.8.6/bin:$PATH" >> ~/.bashrc && \ 
+          source ~/.bashrc
       - name: Show Maven Verion
         run: mvn --version
       - name: Publish package
