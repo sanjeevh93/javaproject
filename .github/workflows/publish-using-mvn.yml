@@ -1,4 +1,4 @@
-name: Publish package to GitHub Packages Using mvn
+name: mvn-publish
 on: [workflow_dispatch]
 jobs:
   publish:
