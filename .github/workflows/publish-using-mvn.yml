@@ -23,9 +23,9 @@ jobs:
           PATH="$M2_HOME/bin:$PATH" && \
           export PATH
       - name: Show Maven Verion
-        run: ./mvnw --version
+        run: mvn --version
       - name: Publish package
-        run: ./mvnw --batch-mode deploy
+        run: mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
