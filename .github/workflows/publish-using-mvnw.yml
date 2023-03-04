@@ -12,6 +12,8 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: Show Maven Verions
+        run: ./mvnw --version
       - name: Publish package
         run: ./mvnw --batch-mode deploy
         env:
