@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.mvnregistry</groupId>
 	<artifactId>javaproject</artifactId>
-	<version>9.0.0-SNAPSHOT</version>
+	<version>9.0.0</version>
 	<name>javaproject</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -75,6 +75,6 @@
         <connection>scm:git:git@github.com:sanjeevh93/javaproject.git</connection>
         <developerConnection>scm:git:git@github.com:sanjeevh93/javaproject.git</developerConnection>
         <url>https://github.com/sanjeevh93/javaproject</url>
-        <tag>HEAD</tag>
+        <tag>javaproject-9.0.0</tag>
     </scm>
 </project>
