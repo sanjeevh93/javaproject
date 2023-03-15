@@ -69,16 +69,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<configuration>
-					<checkModificationExcludes>
-						<checkModificationExclude>pom.xml</checkModificationExclude>
-						<checkModificationExclude>.mvn/wrapper/maven-wrapper.properties</checkModificationExclude>
-					</checkModificationExcludes>			
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
     <scm>
