@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mvnregistry</groupId>
 	<artifactId>javaproject</artifactId>
-	<version>2.0.0</version>
+	<version>9.0.0-SNAPSHOT</version>
 	<name>javaproject</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>18</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -38,6 +37,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- <dependency>
+			<groupId>com.mvnregistry</groupId>
+			<artifactId>javaproject</artifactId>
+			<version>LATEST</version>
+		</dependency> -->
 	</dependencies>
 	<distributionManagement>
 		<repository>
@@ -45,6 +49,11 @@
 			<name>GitHub OWNER Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/sanjeevh93/javaproject</url>
 		</repository>
+		<!-- <repository>
+			<id>githublocal</id>
+			<name>GitHub OWNER Apache Maven Packages</name>
+			<url>http://maven.pkg.github.localhost:3005/monalisa/javaproject</url>
+		</repository> -->
 	</distributionManagement>
 	<build>
 		<plugins>
@@ -60,7 +69,22 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<checkModificationExcludes>
+						<checkModificationExclude>pom.xml</checkModificationExclude>
+						<checkModificationExclude>.mvn/wrapper/maven-wrapper.properties</checkModificationExclude>
+					</checkModificationExcludes>			
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
+    <scm>
+        <connection>scm:git:git@github.com:sanjeevh93/javaproject.git</connection>
+        <developerConnection>scm:git:git@github.com:sanjeevh93/javaproject.git</developerConnection>
+        <url>https://github.com/sanjeevh93/javaproject</url>
+        <tag>HEAD</tag>
+    </scm>
 </project>
