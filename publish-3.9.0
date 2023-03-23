@@ -1,0 +1,30 @@
+name: mvn-publish
+on: [workflow_dispatch]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Install Maven 3.9.0
+        run: |
+          mkdir tmp && \
+          cd tmp && \
+          wget https://archive.apache.org/dist/maven/maven-3/3.9.0/binaries/apache-maven-3.9.0-bin.tar.gz && \
+          tar -xvf apache-maven-3.9.0-bin.tar.gz && \
+          mv apache-maven-3.9.0 /opt/ && \
+          echo "/opt/apache-maven-3.9.0/bin" >> $GITHUB_PATH && \
+          echo "$PATH"
+      - name: Show Maven Verion
+        run: mvn --version
+      - name: Publish package
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
