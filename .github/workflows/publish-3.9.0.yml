@@ -1,4 +1,4 @@
-name: mvn-publish
+name: mvn-publish-3.9.0
 on: [workflow_dispatch]
 jobs:
   publish:
